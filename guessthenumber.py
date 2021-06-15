@@ -34,7 +34,10 @@ def game():
 
     #Give a while loop that is true
     while guesses_remaining < 8 and guesses_remaining != 0:
-        guess = int(input("I'm thinking of a number from 1 to 10, take a guess: "))
+        try:
+            guess = int(input("I'm thinking of a number from 1 to 10, take a guess: "))
+        except ValueError:
+            print("Try again. Please enter a valid number.")
 
     #Have the 'guesses remaining' to minus 1 every wrong guess by the user
         guesses_remaining -= 1
